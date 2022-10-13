@@ -1,0 +1,265 @@
+﻿<!doctype html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>Kanban Board | Skote - Admin & Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- dragula css -->
+        <link href="assets/libs/dragula/dragula.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Bootstrap Css -->
+        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body data-sidebar="dark">
+       
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            
+         
+            @Html.Partial("HeaderPartialView")
+           
+            @Html.Partial("SidebarPartialView")
+            
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+        @RenderBody()
+          
+
+                <div id="modalForm" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title add-task-title">Add New Task</h5>
+                                <h5 class="modal-title update-task-title" style="display: none;">Update Task</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="NewtaskForm" role="form">
+                                    <div class="form-group mb-3">
+                                        <label for="taskname" class="col-form-label">Task Name<span class="text-danger">*</span></label>
+                                        <div class="col-lg-12">
+                                            <input id="taskname" name="taskname" type="text" class="form-control validate" placeholder="Enter Task Name..." required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label class="col-form-label">Task Description</label>
+                                        <div class="col-lg-12">
+                                            <textarea id="taskdesc" class="form-control" name="taskdesc"></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group mb-3">
+                                        <label class="col-form-label">Add Team Member<span class="text-danger">*</span></label>
+                                        <ul class="list-unstyled user-list validate" id="taskassignee">
+                                            <li>
+                                                <div class="form-check form-check-primary mb-2 d-flex align-items-center">
+                                                    <input class="form-check-input" type="checkbox" id="member-1" name="member[]">
+                                                    <label class="form-check-label ms-2" for="member-1">Albert Rodarte</label>
+                                                    <img src="assets/images/users/avatar-1.jpg" class="rounded-circle avatar-xs m-1" alt="">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check form-check-primary mb-2 d-flex align-items-center">
+                                                    <input class="form-check-input" type="checkbox" id="member-2" name="member[]">
+                                                    <label class="form-check-label ms-2" for="member-2">Hannah Glover</label>
+                                                    <img src="assets/images/users/avatar-2.jpg" class="rounded-circle avatar-xs m-1" alt="">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check form-check-primary mb-2 d-flex align-items-center">
+                                                    <input class="form-check-input" type="checkbox" id="member-3" name="member[]">
+                                                    <label class="form-check-label ms-2" for="member-3">Adrian Rodarte</label>
+                                                    <img src="assets/images/users/avatar-3.jpg" class="rounded-circle avatar-xs m-1" alt="">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check form-check-primary mb-2 d-flex align-items-center">
+                                                    <input class="form-check-input" type="checkbox" id="member-4" name="member[]">
+                                                    <label class="form-check-label ms-2" for="member-4">Frank Hamilton</label>
+                                                    <img src="assets/images/users/avatar-4.jpg" class="rounded-circle avatar-xs m-1" alt="">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check form-check-primary mb-2 d-flex align-items-center">
+                                                    <input class="form-check-input" type="checkbox" id="member-5" name="member[]">
+                                                    <label class="form-check-label ms-2" for="member-5">Justin Howard</label>
+                                                    <img src="assets/images/users/avatar-5.jpg" class="rounded-circle avatar-xs m-1" alt="">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check form-check-primary mb-2 d-flex align-items-center">
+                                                    <input class="form-check-input" type="checkbox" id="member-6" name="member[]">
+                                                    <label class="form-check-label ms-2" for="member-6">Michael Lawrence</label>
+                                                    <img src="assets/images/users/avatar-6.jpg" class="rounded-circle avatar-xs m-1" alt="">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check form-check-primary mb-2 d-flex align-items-center">
+                                                    <input class="form-check-input" type="checkbox" id="member-7" name="member[]">
+                                                    <label class="form-check-label ms-2" for="member-7">Oliver Sharp</label>
+                                                    <img src="assets/images/users/avatar-7.jpg" class="rounded-circle avatar-xs m-1" alt="">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check form-check-primary mb-2 d-flex align-items-center">
+                                                    <input class="form-check-input" type="checkbox" id="member-8" name="member[]">
+                                                    <label class="form-check-label ms-2" for="member-8">Richard Simpson</label>
+                                                    <img src="assets/images/users/avatar-8.jpg" class="rounded-circle avatar-xs m-1" alt="">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="form-group mb-4">
+                                        <label class="col-form-label">Status<span class="text-danger">*</span></label>
+                                        <div class="col-lg-12">
+                                            <select class="form-select validate" id="TaskStatus" required>
+                                                <option value="" selected>Choose..</option>
+                                                <option value="Waiting">Waiting</option>
+                                                <option value="Approved">Approved</option>
+                                                <option value="Pending">Pending</option>               
+                                                <option value="Complete">Complete</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-4">
+                                        <label for="taskbudget" class="col-form-label">Budget<span class="text-danger">*</span></label>
+                                        <div class="col-lg-12">
+                                            <input id="taskbudget" name="taskbudget" type="number" placeholder="Enter Task Budget..." class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <button type="button" class="btn btn-primary" id="addtask">Create Task</button>
+                                            <button type="button" class="btn btn-primary" id="updatetaskdetail">Update Task</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+                
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> © Skote.
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-end d-none d-sm-block">
+                                    Design & Develop by Themesbrand
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        <!-- Right Sidebar -->
+        <div class="right-bar">
+            <div data-simplebar class="h-100">
+                <div class="rightbar-title d-flex align-items-center px-3 py-4">
+            
+                    <h5 class="m-0 me-2">Settings</h5>
+
+                    <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                        <i class="mdi mdi-close noti-icon"></i>
+                    </a>
+                </div>
+
+                <!-- Settings -->
+                <hr class="mt-0" />
+                <h6 class="text-center mb-0">Choose Layouts</h6>
+
+                <div class="p-4">
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-1.jpg" class="img-thumbnail" alt="layout images">
+                    </div>
+
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input theme-choice" type="checkbox" id="light-mode-switch" checked>
+                        <label class="form-check-label" for="light-mode-switch">Light Mode</label>
+                    </div>
+    
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-2.jpg" class="img-thumbnail" alt="layout images">
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input theme-choice" type="checkbox" id="dark-mode-switch">
+                        <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
+                    </div>
+    
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-3.jpg" class="img-thumbnail" alt="layout images">
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input theme-choice" type="checkbox" id="rtl-mode-switch">
+                        <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
+                    </div>
+
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-4.jpg" class="img-thumbnail" alt="layout images">
+                    </div>
+                    <div class="form-check form-switch mb-5">
+                        <input class="form-check-input theme-choice" type="checkbox" id="dark-rtl-mode-switch">
+                        <label class="form-check-label" for="dark-rtl-mode-switch">Dark RTL Mode</label>
+                    </div>
+
+            
+                </div>
+
+            </div> <!-- end slimscroll-menu-->
+        </div>
+        <!-- /Right-bar -->
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+        <!-- JAVASCRIPT -->
+        <script src="assets/libs/jquery/jquery.min.js"></script>
+        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="assets/libs/node-waves/waves.min.js"></script>
+
+        <!-- dragula plugins -->
+        <script src="assets/libs/dragula/dragula.min.js"></script>
+
+        <!-- jquery-validation -->
+        <script src="assets/libs/jquery-validation/jquery.validate.min.js"></script>
+
+        <script src="assets/js/pages/task-kanban.init.js"></script>
+
+        <script src="assets/js/pages/task-form.init.js"></script>
+
+        <script src="assets/js/app.js"></script>
+
+    </body>
+</html>
