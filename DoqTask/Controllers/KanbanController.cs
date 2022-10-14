@@ -9,6 +9,7 @@ namespace DoqTask.Controllers
         public IActionResult Index()
         {
             var tasks = context.Tasks.ToList();
+
             return View(tasks);
         }
     }
